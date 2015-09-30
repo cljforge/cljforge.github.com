@@ -1,0 +1,25 @@
+{
+  "name": "cljforge",
+  "version": "1.0.0",
+  "description": "Simple profile page.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cljforge/cljforge.github.com.git"
+  },
+  "keywords": [
+    "clj",
+    "clojure",
+    "Artem",
+    "Lopatiy"
+  ],
+  "author": "Artem Lopatiy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cljforge/cljforge.github.com/issues"
+  },
+  "homepage": "https://github.com/cljforge/cljforge.github.com#readme"
+}
