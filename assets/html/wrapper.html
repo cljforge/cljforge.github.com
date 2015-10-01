@@ -1,0 +1,24 @@
+<div class="sidebar container" ng-class="{active : sidebarOpened}">
+    <section>
+        <button ng-click="toggle()" class="btn btn-default pull-right">
+            <i class="fa fa-bars fa-2x"></i>
+        </button>
+    </section>
+    <div class="clearfix"></div>
+    <section>
+        <a class="btn btn-default btn-block" ui-sref="wrapper.main">
+            main
+            <i class="fa fa-times"></i>
+        </a>
+    </section>
+    <section>
+        <a class="btn btn-default btn-block" ui-sref="wrapper.components">
+            components
+        </a>
+    </section>
+</div>
+<div class="layout-wrapper" ng-click="toggle()" ng-class="{faded : sidebarOpened}"></div>
+<div class="layout">
+    <div style="z-index: 1" class="container-fluid" ui-view="header"></div>
+    <div style="z-index: 1" class="container-fluid" ui-view="content"></div>
+</div>
