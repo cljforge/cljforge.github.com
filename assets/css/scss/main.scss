@@ -65,6 +65,24 @@ div.round-sidebar {
   }
 }
 
+#flasher {
+  position: fixed;
+  top: 50%;
+  right: -75px;
+  margin-top: -75px;
+  z-index: 80;
+  display: block;
+  padding: 5px;
+  width: 150px;
+  height: 150px;
+  background-color: white;
+  border: 1px solid black;
+  box-shadow: 0 0 10px black;
+  border-radius: 50%;
+
+  @include transition(all .5s)
+}
+
 div.round-sidebar.active {
   width: 300px;
   margin-top: -150px;
@@ -85,40 +103,30 @@ div.round-sidebar.active {
   #nav {
     margin-left: -55px;
   }
-
   #main {
     top: 19%;
     left: 37%;
   }
-
   #components {
     left: 22%;
     top: 32%
   }
-
   #about {
     left: 16%;
     top: 50%
   }
-
   #reply {
     left: 22%;
     top: 68%
   }
 }
 
-.layout-wrapper {
-  display: none;
+.layout-wrapper.faded {
+  display: block;
   position: fixed;
   width: 100%;
   height: 100%;
-  opacity: 0;
-  background-color: black;
-  @include transition(opacity .1s);
-}
-
-.faded {
-  display: block;
-  z-index: 89;
   opacity: 0.6;
+  background-color: black;
+  @include transition(all .5s);
 }

@@ -1,14 +1,14 @@
 <div class="round-sidebar" ng-class="{active : sidebarOpened}">
-    <button class="btn btn-default round" id="main" ui-sref="wrapper.main">
+    <button class="btn btn-default round" id="main" ng-click="go('wrapper.main')">
         <i class="fa fa-2x fa-hand-peace-o"></i>
     </button>
-    <button class="btn btn-default round" id="components" ui-sref="wrapper.components">
+    <button class="btn btn-default round" id="components" ng-click="go('wrapper.components')">
         <i class="fa fa-2x fa-cogs"></i>
     </button>
-    <button class="btn btn-default round" id="about" ui-sref="wrapper.components">
+    <button class="btn btn-default round" id="about" ng-click="go('wrapper.components')">
         <i class="fa fa-2x fa-user"></i>
     </button>
-    <button class="btn btn-default round" id="reply" ui-sref="wrapper.components">
+    <button class="btn btn-default round" id="reply" ng-click="go('wrapper.components')">
         <i class="fa fa-2x fa-envelope-o"></i>
     </button>
     <button class="btn btn-default round " ng-click="toggle()" id="nav">
@@ -16,6 +16,7 @@
     </button>
 </div>
 <div class="layout-wrapper" ng-click="toggle()" ng-class="{faded : sidebarOpened}"></div>
+<div id="flasher"></div>
 <div class="layout">
     <div style="z-index: 1" class="container-fluid" ui-view="header"></div>
     <div style="z-index: 1" class="container-fluid" ui-view="content"></div>
