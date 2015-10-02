@@ -32,4 +32,20 @@ application.config(['$stateProvider', '$urlRouterProvider',
                     }
                 }
             })
+            .state('wrapper.about',{
+                url : 'components',
+                views: {
+                    'content@wrapper' : {
+                        templateUrl : 'assets/html/components.html'
+                    }
+                }
+            })
+            .state('wrapper.reply',{
+                url : 'components',
+                views: {
+                    'content@wrapper' : {
+                        templateUrl : 'assets/html/components.html'
+                    }
+                }
+            });
     }]);

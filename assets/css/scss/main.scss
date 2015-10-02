@@ -1,0 +1,124 @@
+$background: white;
+$border: black;
+$shadow: darkgrey;
+$color : black;
+
+body {
+  background-color: $background;
+}
+
+.btn-default {
+  background-color: $background;
+  color: $color;
+  border: $border;
+}
+
+@mixin transition($value) {
+  -webkit-transition: $value;
+  -moz-transition: $value;
+  transition: $value;
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+section {
+  margin: 5px;
+}
+
+.btn.round {
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+}
+
+div.round-sidebar {
+  position: fixed;
+  top: 50%;
+  right: -75px;
+  margin-top: -75px;
+  z-index: 90;
+  display: block;
+  padding: 5px;
+  width: 150px;
+  height: 150px;
+
+  border: $border solid 1px;
+  box-shadow: 0 0 5px $border;
+  color: #cfd2da;
+  background-color: $background;
+  @include transition(all .5s);
+  @include border-radius(50%);
+
+  .btn {
+    outline: none;
+    position: absolute;
+    margin-left: -55px;
+    margin-top: -25px;
+    top: 50%;
+    left: 50%;
+    @include transition(all .5s);
+  }
+}
+
+div.round-sidebar.active {
+  width: 300px;
+  margin-top: -150px;
+  right: -150px;
+  height: 300px;
+}
+
+div.round-sidebar.active {
+  width: 300px;
+  margin-top: -150px;
+  right: -150px;
+  height: 300px;
+
+  .btn {
+    margin-left: -25px;
+  }
+
+  #nav {
+    margin-left: -55px;
+  }
+
+  #main {
+    top: 19%;
+    left: 37%;
+  }
+
+  #components {
+    left: 22%;
+    top: 32%
+  }
+
+  #about {
+    left: 16%;
+    top: 50%
+  }
+
+  #reply {
+    left: 22%;
+    top: 68%
+  }
+}
+
+.layout-wrapper {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background-color: black;
+  @include transition(opacity .1s);
+}
+
+.faded {
+  display: block;
+  z-index: 89;
+  opacity: 0.6;
+}

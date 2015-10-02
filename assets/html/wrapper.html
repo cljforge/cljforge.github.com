@@ -1,21 +1,19 @@
-<div class="sidebar container" ng-class="{active : sidebarOpened}">
-    <section>
-        <button ng-click="toggle()" class="btn btn-default pull-right">
-            <i class="fa fa-bars fa-2x"></i>
-        </button>
-    </section>
-    <div class="clearfix"></div>
-    <section>
-        <a class="btn btn-default btn-block" ui-sref="wrapper.main">
-            main
-            <i class="fa fa-times"></i>
-        </a>
-    </section>
-    <section>
-        <a class="btn btn-default btn-block" ui-sref="wrapper.components">
-            components
-        </a>
-    </section>
+<div class="round-sidebar" ng-class="{active : sidebarOpened}">
+    <button class="btn btn-default round" id="main" ui-sref="wrapper.main">
+        <i class="fa fa-2x fa-hand-peace-o"></i>
+    </button>
+    <button class="btn btn-default round" id="components" ui-sref="wrapper.components">
+        <i class="fa fa-2x fa-cogs"></i>
+    </button>
+    <button class="btn btn-default round" id="about" ui-sref="wrapper.components">
+        <i class="fa fa-2x fa-user"></i>
+    </button>
+    <button class="btn btn-default round" id="reply" ui-sref="wrapper.components">
+        <i class="fa fa-2x fa-envelope-o"></i>
+    </button>
+    <button class="btn btn-default round " ng-click="toggle()" id="nav">
+        <i class="fa fa-bars fa-2x"></i>
+    </button>
 </div>
 <div class="layout-wrapper" ng-click="toggle()" ng-class="{faded : sidebarOpened}"></div>
 <div class="layout">
