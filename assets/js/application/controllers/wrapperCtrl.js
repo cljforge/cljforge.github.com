@@ -21,7 +21,8 @@ function wrapperCtrl($scope, $state, $rootScope) {
                         flasher
                             .transition({
                                 opacity: 0
-                            },{
+                            })
+                            .transition({
                                 display: 'none'
                             });
                     });
