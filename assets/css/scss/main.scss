@@ -67,18 +67,11 @@ div.round-sidebar {
 
 #flasher {
   position: fixed;
-  top: 50%;
-  right: -75px;
-  margin-top: -75px;
-  z-index: 80;
-  display: block;
-  padding: 5px;
-  width: 150px;
-  height: 150px;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  display: none;
   background-color: white;
-  border: 1px solid black;
-  box-shadow: 0 0 10px black;
-  border-radius: 50%;
 
   @include transition(all .5s)
 }
