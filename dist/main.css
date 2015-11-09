@@ -1,20 +1,86 @@
+@charset "UTF-8";
 body {
-  background-color: white; }
+  background-color: black; }
 
 .btn-default {
-  background-color: white;
-  color: black;
+  background-color: black;
+  color: #dec49e;
   border: black; }
 
 section {
   margin: 5px; }
+
+#greeting {
+  position: fixed;
+  bottom: 20%;
+  left: 5%;
+  width: 30%; }
+
+.content {
+  margin-top: 100px; }
 
 .btn.round {
   border-radius: 50%;
   height: 50px;
   width: 50px; }
 
+.bg {
+  position: absolute;
+  background: url("/cljforge.github.com/assets/img/clj.png") no-repeat;
+  -moz-background-size: cover;
+  /* Firefox 3.6+ */
+  -webkit-background-size: cover;
+  /* Safari 3.1+ и Chrome 4.0+ */
+  -o-background-size: cover;
+  /* Opera 9.6+ */
+  background-size: cover;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+
+#content-view {
+  margin-top: 100px; }
+
+.header {
+  position: fixed;
+  top: 10px;
+  opacity: 0.9;
+  padding: 10px;
+  color: #dec49e;
+  min-height: 50px;
+  background: black; }
+
+.footer {
+  position: fixed;
+  bottom: 10px;
+  opacity: 0.9;
+  padding: 10px;
+  color: #dec49e;
+  min-height: 50px;
+  background: black; }
+
+.panel {
+  background: black;
+  border-radius: 0;
+  opacity: 0.9;
+  color: #dec49e;
+  padding: 10px;
+  box-shadow: 0 10px 10px black; }
+  .panel .panel-heading h4 {
+    position: relative;
+    margin-bottom: 20px; }
+    .panel .panel-heading h4:after {
+      content: "";
+      bottom: -5px;
+      left: 0;
+      height: 2px;
+      width: 40%;
+      background: #dec49e;
+      position: absolute; }
+
 div.round-sidebar {
+  opacity: 0.9;
   position: fixed;
   top: 50%;
   right: -75px;
@@ -26,8 +92,8 @@ div.round-sidebar {
   height: 150px;
   border: black solid 1px;
   box-shadow: 0 0 5px black;
-  color: #cfd2da;
-  background-color: white;
+  color: #dec49e;
+  background-color: black;
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   transition: all 0.5s;
@@ -45,23 +111,6 @@ div.round-sidebar {
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     transition: all 0.5s; }
-
-#flasher {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  display: none;
-  background-color: white;
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  transition: all 0.5s; }
-
-div.round-sidebar.active {
-  width: 300px;
-  margin-top: -150px;
-  right: -150px;
-  height: 300px; }
 
 div.round-sidebar.active {
   width: 300px;
@@ -90,7 +139,7 @@ div.round-sidebar.active {
   position: fixed;
   width: 100%;
   height: 100%;
-  opacity: 0.6;
+  opacity: 0.9;
   background-color: black;
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;

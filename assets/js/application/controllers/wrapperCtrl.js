@@ -4,29 +4,7 @@ function wrapperCtrl($scope, $state, $rootScope) {
     };
 
     $scope.go = function (state) {
-        var flasher = $('#flasher');
-        flasher
-            .transition({
-                'display': 'block'
-            })
-            .transition({
-                'opacity': '1'
-            },
-            'fast'
-            ,
-            function (element) {
-                $scope.toggle();
-                $state.go(state)
-                    .then(function (state) {
-                        flasher
-                            .transition({
-                                opacity: 0
-                            })
-                            .transition({
-                                display: 'none'
-                            });
-                    });
-            })
+        $state.go(state);
     }
 }
 

@@ -16,6 +16,7 @@ module.exports = function (grunt) {
                 src: [js('application'),
                     ctrl('mainCtrl'),
                     ctrl('wrapperCtrl'),
+                    ctrl('headerCtrl'),
                     js('routes')],
                 dest: 'dist/built.js'
             }
