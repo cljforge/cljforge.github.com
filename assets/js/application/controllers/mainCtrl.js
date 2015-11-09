@@ -1,5 +1,5 @@
 function mainCtrl ($scope, $state) {
-    console.log('main ctrl');
+    console.log($state);
 }
 
 mainCtrl['$inject'] = ['$scope','$state'];

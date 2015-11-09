@@ -1,6 +1,6 @@
 $background: black;
 $border: black;
-$shadow: black;
+$shadow: rgba(0,0,0,0.9);
 $color : #dec49e;
 $op : 0.9;
 
@@ -17,7 +17,7 @@ body {
 }
 
 @mixin shadow (){
-  box-shadow: 0 10px 10px $shadow;
+  box-shadow: 0 10px 5px $shadow;
 }
 
 .btn-default {
@@ -45,9 +45,17 @@ section {
 
 #greeting{
   position: fixed;
-  bottom: 20%;
+  top: 20%;
   left: 5%;
   width: 30%;
+}
+
+#info{
+  position: fixed;
+  bottom: 20%;
+  left: 35%;
+  width: 30%;
+
 }
 
 .content {
@@ -75,6 +83,7 @@ section {
 }
 
 .header{
+  @include shadow();
   position: fixed;
   top: 10px;
   opacity: $op;
@@ -85,6 +94,7 @@ section {
 }
 
 .footer{
+  @include shadow();
   position: fixed;
   bottom: 10px;
   opacity: $op;
@@ -106,7 +116,7 @@ section {
 
     h4 {
       position: relative;
-      margin-bottom: 20px;
+      margin-bottom: 5px;
 
       &:after {
         content: "";
@@ -134,9 +144,9 @@ div.round-sidebar {
   height: 150px;
 
   border: $border solid 1px;
-  box-shadow: 0 0 5px $border;
   color: $color;
   background-color: $background;
+  @include shadow();
   @include transition(all .5s);
   @include border-radius(50%);
 

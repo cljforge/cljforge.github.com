@@ -25,7 +25,8 @@
   "dependencies": {
     "angular": "^1.4.7",
     "grunt": "^0.4.5",
-    "jquery": "^2.1.4"
+    "jquery": "^2.1.4",
+    "lodash": "^3.10.1"
   },
   "devDependencies": {
     "grunt": "^0.4.5",

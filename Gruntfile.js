@@ -13,7 +13,9 @@ module.exports = function (grunt) {
     grunt.initConfig({
         concat: {
             dist: {
-                src: [js('application'),
+                src: [
+                    js('application/features'),
+                    js('application'),
                     ctrl('mainCtrl'),
                     ctrl('wrapperCtrl'),
                     ctrl('headerCtrl'),

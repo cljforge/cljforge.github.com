@@ -1,9 +1,13 @@
 function headerCtrl($scope, $http) {
 
-   $http.get('assets/facts.json').then(function(result){
-      $scope.fact = result.data[Math.floor(Math.random() * (result.data.length+1))];
-      console.log($scope.fact);
-   });
+   function resetFact(){
+      $http.get('assets/facts.json').then(function(result){
+         $scope.fact = result.data[Math.floor(Math.random() * (result.data.length+1))];
+      });
+   }
+
+   resetFact();
+   $scope.$on('scrollBottom', resetFact)
 }
 
 headerCtrl['$inject'] = ['$scope','$http'];

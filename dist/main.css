@@ -12,8 +12,14 @@ section {
 
 #greeting {
   position: fixed;
-  bottom: 20%;
+  top: 20%;
   left: 5%;
+  width: 30%; }
+
+#info {
+  position: fixed;
+  bottom: 20%;
+  left: 35%;
   width: 30%; }
 
 .content {
@@ -43,6 +49,7 @@ section {
   margin-top: 100px; }
 
 .header {
+  box-shadow: 0 10px 5px rgba(0, 0, 0, 0.9);
   position: fixed;
   top: 10px;
   opacity: 0.9;
@@ -52,6 +59,7 @@ section {
   background: black; }
 
 .footer {
+  box-shadow: 0 10px 5px rgba(0, 0, 0, 0.9);
   position: fixed;
   bottom: 10px;
   opacity: 0.9;
@@ -66,10 +74,10 @@ section {
   opacity: 0.9;
   color: #dec49e;
   padding: 10px;
-  box-shadow: 0 10px 10px black; }
+  box-shadow: 0 10px 5px rgba(0, 0, 0, 0.9); }
   .panel .panel-heading h4 {
     position: relative;
-    margin-bottom: 20px; }
+    margin-bottom: 5px; }
     .panel .panel-heading h4:after {
       content: "";
       bottom: -5px;
@@ -91,9 +99,9 @@ div.round-sidebar {
   width: 150px;
   height: 150px;
   border: black solid 1px;
-  box-shadow: 0 0 5px black;
   color: #dec49e;
   background-color: black;
+  box-shadow: 0 10px 5px rgba(0, 0, 0, 0.9);
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   transition: all 0.5s;

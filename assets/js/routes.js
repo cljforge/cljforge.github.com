@@ -1,5 +1,5 @@
 application.config(['$stateProvider', '$urlRouterProvider',
-   function ($stateProvider, $urlRouterProvider, $translateProvider) {
+   function ($stateProvider, $urlRouterProvider, $translateProvider,$rootScope) {
       $urlRouterProvider.otherwise('/main');
 
       var header = {
