@@ -62,7 +62,7 @@ section {
 
 .bg {
   position: absolute;
-  background: url('assets/img/clj.png') no-repeat;
+  background: url('../assets/img/clj.png') no-repeat;
   @include bg-size(cover);
   top: 0;
   left: 0;

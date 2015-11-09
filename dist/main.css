@@ -26,7 +26,7 @@ section {
 
 .bg {
   position: absolute;
-  background: url("assets/img/clj.png") no-repeat;
+  background: url("../assets/img/clj.png") no-repeat;
   -moz-background-size: cover;
   /* Firefox 3.6+ */
   -webkit-background-size: cover;
