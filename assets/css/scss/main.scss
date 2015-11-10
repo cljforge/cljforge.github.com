@@ -1,8 +1,9 @@
 $background: black;
 $border: black;
-$shadow: rgba(0,0,0,0.9);
-$color : #dec49e;
+$shadow: rgba(0,0,0,0.6);
+$color : #ebebe4;//#dec49e;
 $op : 0.9;
+$opbg : rgba(0,0,0,0.8);
 
 
 body {
@@ -43,19 +44,14 @@ section {
   margin: 5px;
 }
 
-#greeting{
-  position: fixed;
-  top: 20%;
-  left: 5%;
-  width: 30%;
+.header {
+  margin-left: -15px;
 }
 
-#info{
+.footer{
+  margin-right: -15px;
   position: fixed;
-  bottom: 20%;
-  left: 35%;
-  width: 30%;
-
+  bottom: 0;
 }
 
 .content {
@@ -82,57 +78,38 @@ section {
   margin-top: 100px;
 }
 
-.header{
-  @include shadow();
-  position: fixed;
-  top: 10px;
-  opacity: $op;
-  padding: 10px;
-  color: $color;
-  min-height: 50px;
-  background: $background;
+.no-margin {
+  margin: 0;
 }
 
-.footer{
-  @include shadow();
-  position: fixed;
-  bottom: 10px;
-  opacity: $op;
-  padding: 10px;
-  color: $color;
-  min-height: 50px;
-  background: $background;
+.no-padding {
+  padding: 0;
 }
 
 .panel {
-  background: black;
+  background: $opbg;
   border-radius: 0;
-  opacity: $op;
   color: $color;
   padding: 10px;
   @include shadow();
+}
 
-  .panel-heading {
+h4 {
+  position: relative;
+  margin-bottom: 10px;
 
-    h4 {
-      position: relative;
-      margin-bottom: 5px;
-
-      &:after {
-        content: "";
-        bottom: -5px;
-        left: 0;
-        height: 2px;
-        width: 40%;
-        background: #dec49e;
-        position: absolute;
-      }
-    }
+  &:after {
+    content: "";
+    bottom: -5px;
+    left: 0;
+    height: 2px;
+    width: 40%;
+    background: #dec49e;
+    position: absolute;
   }
 }
 
 div.round-sidebar {
-  opacity: $op;
   position: fixed;
   top: 50%;
   right: -75px;
@@ -200,4 +177,43 @@ div.round-sidebar.active {
   opacity: $op;
   background-color: black;
   @include transition(all .5s);
+}
+
+
+.blocks {
+  background: $opbg;
+  padding: 15px;
+  @include shadow();
+
+  .block {
+    position: relative;
+    display: table;
+    padding: 10px;
+    height: 250px;
+    background-color: $color;
+    color: black;
+
+    .block-overlay {
+      position: absolute;
+      height: 100%;
+      top: 0;
+      right: 0;
+      background: rgba(0,0,0,1);
+      width: 100%;
+      color: $color;
+      align-content: center;
+      transition: width .5s ease 0s;
+    }
+
+    .content {
+      overflow: hidden;
+      transition: display .2s;
+    }
+  }
+
+  .block:hover {
+    .block-overlay{
+      width: 0;
+    }
+  }
 }

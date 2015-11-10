@@ -16,9 +16,9 @@
     </button>
 </div>
 <div class="layout">
-    <div class="bg">
-        <div style="z-index: 1" class="container-fluid" ui-view="header"></div>
-        <div style="z-index: 1" class="container-fluid content" ui-view="content"></div>
-        <div style="z-index: 1" class="container-fluid" ui-view="footer"></div>
+    <div class="bg container-fluid">
+        <div style="z-index: 1" ui-view="header"></div>
+        <div style="z-index: 1" ui-view="content"></div>
+        <div style="z-index: 1" ui-view="footer"></div>
     </div>
 </div>

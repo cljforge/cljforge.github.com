@@ -4,23 +4,19 @@ body {
 
 .btn-default {
   background-color: black;
-  color: #dec49e;
+  color: #ebebe4;
   border: black; }
 
 section {
   margin: 5px; }
 
-#greeting {
-  position: fixed;
-  top: 20%;
-  left: 5%;
-  width: 30%; }
+.header {
+  margin-left: -15px; }
 
-#info {
+.footer {
+  margin-right: -15px;
   position: fixed;
-  bottom: 20%;
-  left: 35%;
-  width: 30%; }
+  bottom: 0; }
 
 .content {
   margin-top: 100px; }
@@ -48,47 +44,32 @@ section {
 #content-view {
   margin-top: 100px; }
 
-.header {
-  box-shadow: 0 10px 5px rgba(0, 0, 0, 0.9);
-  position: fixed;
-  top: 10px;
-  opacity: 0.9;
-  padding: 10px;
-  color: #dec49e;
-  min-height: 50px;
-  background: black; }
+.no-margin {
+  margin: 0; }
 
-.footer {
-  box-shadow: 0 10px 5px rgba(0, 0, 0, 0.9);
-  position: fixed;
-  bottom: 10px;
-  opacity: 0.9;
-  padding: 10px;
-  color: #dec49e;
-  min-height: 50px;
-  background: black; }
+.no-padding {
+  padding: 0; }
 
 .panel {
-  background: black;
+  background: rgba(0, 0, 0, 0.8);
   border-radius: 0;
-  opacity: 0.9;
-  color: #dec49e;
+  color: #ebebe4;
   padding: 10px;
-  box-shadow: 0 10px 5px rgba(0, 0, 0, 0.9); }
-  .panel .panel-heading h4 {
-    position: relative;
-    margin-bottom: 5px; }
-    .panel .panel-heading h4:after {
-      content: "";
-      bottom: -5px;
-      left: 0;
-      height: 2px;
-      width: 40%;
-      background: #dec49e;
-      position: absolute; }
+  box-shadow: 0 10px 5px rgba(0, 0, 0, 0.6); }
+
+h4 {
+  position: relative;
+  margin-bottom: 10px; }
+  h4:after {
+    content: "";
+    bottom: -5px;
+    left: 0;
+    height: 2px;
+    width: 40%;
+    background: #dec49e;
+    position: absolute; }
 
 div.round-sidebar {
-  opacity: 0.9;
   position: fixed;
   top: 50%;
   right: -75px;
@@ -99,9 +80,9 @@ div.round-sidebar {
   width: 150px;
   height: 150px;
   border: black solid 1px;
-  color: #dec49e;
+  color: #ebebe4;
   background-color: black;
-  box-shadow: 0 10px 5px rgba(0, 0, 0, 0.9);
+  box-shadow: 0 10px 5px rgba(0, 0, 0, 0.6);
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   transition: all 0.5s;
@@ -152,5 +133,32 @@ div.round-sidebar.active {
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   transition: all 0.5s; }
+
+.blocks {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 15px;
+  box-shadow: 0 10px 5px rgba(0, 0, 0, 0.6); }
+  .blocks .block {
+    position: relative;
+    display: table;
+    padding: 10px;
+    height: 250px;
+    background-color: #ebebe4;
+    color: black; }
+    .blocks .block .block-overlay {
+      position: absolute;
+      height: 100%;
+      top: 0;
+      right: 0;
+      background: black;
+      width: 100%;
+      color: #ebebe4;
+      align-content: center;
+      transition: width .5s ease 0s; }
+    .blocks .block .content {
+      overflow: hidden;
+      transition: display .2s; }
+  .blocks .block:hover .block-overlay {
+    width: 0; }
 
 /*# sourceMappingURL=main.css.map */
