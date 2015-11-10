@@ -6,8 +6,15 @@ $op : 0.9;
 $opbg : rgba(0,0,0,0.8);
 
 
+@font-face {
+  font-family: hanken;
+  src: url('../assets/fonts/Hanken-Book.ttf');
+}
+
 body {
   background-color: $background;
+  font-family: hanken, serif;
+  font-size: 12pt;
 }
 
 @mixin bg-size ($size) {
@@ -189,20 +196,21 @@ div.round-sidebar.active {
     position: relative;
     display: table;
     padding: 10px;
-    height: 250px;
+    height: 300px;
     background-color: $color;
     color: black;
 
     .block-overlay {
+      z-index: 5;
       position: absolute;
       height: 100%;
       top: 0;
       right: 0;
-      background: rgba(0,0,0,1);
       width: 100%;
+      background: rgba(0,0,0,1);
       color: $color;
       align-content: center;
-      transition: width .5s ease 0s;
+      transition: all .5s ease 0s;
     }
 
     .content {
@@ -213,7 +221,69 @@ div.round-sidebar.active {
 
   .block:hover {
     .block-overlay{
-      width: 0;
+      z-index: 10;
+      &.right{
+        right: -100%;
+      }
+
+      &.left{
+        right: 100%;
+      }
+    }
+  }
+}
+
+
+.big-button{
+  width: 100%;
+  height: 100px;
+  margin-bottom: 20px;
+
+  .floor{
+    position: relative;
+    top: 10px;
+    background-color: #000000;
+    width: 310px;
+    height: 100px;
+    border-radius: 5px;
+  }
+
+  .shadow {
+    position: relative;
+    top: -110px;
+    width: 300px;
+    height: 110px;
+    border-radius: 10px;
+    background: linear-gradient(to right, #FFD7A3 0%, #F5BD73 5%,  #D39647 10%,  #D39647 95%, #B57726);
+    transition: all .3s;
+    box-shadow: 0 1px 5px #3D2F1D;
+
+    &:active{
+      height: 100px;
+      top: -100px;
+    }
+
+    button {
+      outline: none;
+      width: 300px;
+      height: 100px;
+      border-radius: 10px;
+
+      left: 0;
+      bottom: 0;
+      border: 3px solid #D39647;
+      background: #F5BD73;
+      color: #ffffff;
+
+      &:focus{
+        outline: none;
+      }
+
+      span {
+        font-family: gochi-hand, sans-serif;
+        font-size: 72px;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 1);
+      }
     }
   }
 }

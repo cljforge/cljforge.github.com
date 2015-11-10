@@ -9,7 +9,7 @@ function wrapperCtrl($scope, $state, $rootScope) {
             name: "round",
             icon: "tachometer fa-rotate-270"
         }];
-    $scope.nav = "round"
+    $scope.nav = "round";
 
     $scope.setNav = function(name){
         $scope.nav = name;

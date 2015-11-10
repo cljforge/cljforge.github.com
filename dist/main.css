@@ -1,6 +1,11 @@
 @charset "UTF-8";
+@font-face {
+  font-family: hanken;
+  src: url("../assets/fonts/Hanken-Book.ttf"); }
 body {
-  background-color: black; }
+  background-color: black;
+  font-family: hanken, serif;
+  font-size: 12pt; }
 
 .btn-default {
   background-color: black;
@@ -142,23 +147,68 @@ div.round-sidebar.active {
     position: relative;
     display: table;
     padding: 10px;
-    height: 250px;
+    height: 300px;
     background-color: #ebebe4;
     color: black; }
     .blocks .block .block-overlay {
+      z-index: 5;
       position: absolute;
       height: 100%;
       top: 0;
       right: 0;
-      background: black;
       width: 100%;
+      background: black;
       color: #ebebe4;
       align-content: center;
-      transition: width .5s ease 0s; }
+      transition: all .5s ease 0s; }
     .blocks .block .content {
       overflow: hidden;
       transition: display .2s; }
   .blocks .block:hover .block-overlay {
-    width: 0; }
+    z-index: 10; }
+    .blocks .block:hover .block-overlay.right {
+      right: -100%; }
+    .blocks .block:hover .block-overlay.left {
+      right: 100%; }
+
+.big-button {
+  width: 100%;
+  height: 100px;
+  margin-bottom: 20px; }
+  .big-button .floor {
+    position: relative;
+    top: 10px;
+    background-color: #000000;
+    width: 310px;
+    height: 100px;
+    border-radius: 5px; }
+  .big-button .shadow {
+    position: relative;
+    top: -110px;
+    width: 300px;
+    height: 110px;
+    border-radius: 10px;
+    background: linear-gradient(to right, #FFD7A3 0%, #F5BD73 5%, #D39647 10%, #D39647 95%, #B57726);
+    transition: all .3s;
+    box-shadow: 0 1px 5px #3D2F1D; }
+    .big-button .shadow:active {
+      height: 100px;
+      top: -100px; }
+    .big-button .shadow button {
+      outline: none;
+      width: 300px;
+      height: 100px;
+      border-radius: 10px;
+      left: 0;
+      bottom: 0;
+      border: 3px solid #D39647;
+      background: #F5BD73;
+      color: #ffffff; }
+      .big-button .shadow button:focus {
+        outline: none; }
+      .big-button .shadow button span {
+        font-family: gochi-hand, sans-serif;
+        font-size: 72px;
+        text-shadow: 0 0 10px white; }
 
 /*# sourceMappingURL=main.css.map */
