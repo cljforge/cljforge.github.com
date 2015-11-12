@@ -9,7 +9,7 @@ function wrapperCtrl($scope, $state, $rootScope) {
             name: "round",
             icon: "tachometer fa-rotate-270"
         }];
-    $scope.nav = "round";
+    $scope.nav = "none";
 
     $scope.setNav = function(name){
         $scope.nav = name;
@@ -36,43 +36,43 @@ function wrapperCtrl($scope, $state, $rootScope) {
         }
     }
 
-    var allowScroll = true;
-
-    function reset() {
-        allowScroll = true;
-    }
-
-    function onWheel(e) {
-        if (allowScroll) {
-            e = e || window.event;
-            // wheelDelta не дает возможность узнать количество пикселей
-            var delta = e.deltaY || e.detail || e.wheelDelta;
-            e.preventDefault ? e.preventDefault() : (e.returnValue = false);
-
-            allowScroll = false;
-            if (delta > 0) {
-                changeState(1);
-                //$scope.$broadcast('scrollBottom',true);
-            } else {
-                changeState(-1);
-                //$scope.$broadcast('scrollTop',true);
-            }
-            setTimeout(reset, 500);
-        }
-    }
-
-    var elem = document.body;
-    if (elem.addEventListener) {
-        if ('onwheel' in document) { // IE9+, FF17+, Ch31+
-            elem.addEventListener("wheel", onWheel);
-        } else if ('onmousewheel' in document) { // устаревший вариант события
-            elem.addEventListener("mousewheel",onWheel);
-        } else { // Firefox < 17
-            elem.addEventListener("MozMousePixelScroll", onWheel);
-        }
-    } else { // IE8-
-        elem.attachEvent("onmousewheel", onWheel);
-    }
+    //var allowScroll = true;
+    //
+    //function reset() {
+    //    allowScroll = true;
+    //}
+    //
+    //function onWheel(e) {
+    //    if (allowScroll) {
+    //        e = e || window.event;
+    //        // wheelDelta не дает возможность узнать количество пикселей
+    //        var delta = e.deltaY || e.detail || e.wheelDelta;
+    //        e.preventDefault ? e.preventDefault() : (e.returnValue = false);
+    //
+    //        allowScroll = false;
+    //        if (delta > 0) {
+    //            //changeState(1);
+    //            //$scope.$broadcast('scrollBottom',true);
+    //        } else {
+    //            //changeState(-1);
+    //            //$scope.$broadcast('scrollTop',true);
+    //        }
+    //        setTimeout(reset, 500);
+    //    }
+    //}
+    //
+    //var elem = document.body;
+    //if (elem.addEventListener) {
+    //    if ('onwheel' in document) { // IE9+, FF17+, Ch31+
+    //        elem.addEventListener("wheel", onWheel);
+    //    } else if ('onmousewheel' in document) { // устаревший вариант события
+    //        elem.addEventListener("mousewheel",onWheel);
+    //    } else { // Firefox < 17
+    //        elem.addEventListener("MozMousePixelScroll", onWheel);
+    //    }
+    //} else { // IE8-
+    //    elem.attachEvent("onmousewheel", onWheel);
+    //}
 
 }
 

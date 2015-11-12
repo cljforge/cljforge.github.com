@@ -1,5 +1,8 @@
 function mainCtrl ($scope, $state) {
-    console.log($state);
+    $scope.onLeft = true;
+    $scope.pull = function(){
+        $scope.onLeft = !$scope.onLeft;
+    }
 }
 
 mainCtrl['$inject'] = ['$scope','$state'];

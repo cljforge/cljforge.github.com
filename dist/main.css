@@ -7,6 +7,12 @@ body {
   font-family: hanken, serif;
   font-size: 12pt; }
 
+@media (min-width: 768px) {
+  .block {
+    height: 220px; } }
+@media (max-width: 768px) {
+  .block {
+    height: auto; } }
 .btn-default {
   background-color: black;
   color: #ebebe4;
@@ -22,9 +28,6 @@ section {
   margin-right: -15px;
   position: fixed;
   bottom: 0; }
-
-.content {
-  margin-top: 100px; }
 
 .btn.round {
   border-radius: 50%;
@@ -145,7 +148,6 @@ div.round-sidebar.active {
   box-shadow: 0 10px 5px rgba(0, 0, 0, 0.6); }
   .blocks .block {
     position: relative;
-    display: table;
     padding: 10px;
     height: 300px;
     background-color: #ebebe4;
@@ -160,9 +162,15 @@ div.round-sidebar.active {
       background: black;
       color: #ebebe4;
       align-content: center;
-      transition: all .5s ease 0s; }
+      transition: all .5s;
+      cursor: pointer; }
+      @media (max-width: 768px) {
+        .blocks .block .block-overlay.on-left {
+          top: -100%; } }
+      @media (min-width: 768px) {
+        .blocks .block .block-overlay.on-left {
+          right: 100%; } }
     .blocks .block .content {
-      overflow: hidden;
       transition: display .2s; }
   .blocks .block:hover .block-overlay {
     z-index: 10; }
@@ -174,7 +182,9 @@ div.round-sidebar.active {
 .big-button {
   width: 100%;
   height: 100px;
-  margin-bottom: 20px; }
+  margin-bottom: 20px;
+  position: relative;
+  top: 25%; }
   .big-button .floor {
     position: relative;
     top: 10px;
@@ -188,8 +198,8 @@ div.round-sidebar.active {
     width: 300px;
     height: 110px;
     border-radius: 10px;
-    background: linear-gradient(to right, #FFD7A3 0%, #F5BD73 5%, #D39647 10%, #D39647 95%, #B57726);
-    transition: all .3s;
+    background-color: #B07526;
+    transition: all .1s;
     box-shadow: 0 1px 5px #3D2F1D; }
     .big-button .shadow:active {
       height: 100px;
@@ -201,14 +211,19 @@ div.round-sidebar.active {
       border-radius: 10px;
       left: 0;
       bottom: 0;
-      border: 3px solid #D39647;
-      background: #F5BD73;
-      color: #ffffff; }
+      background: radial-gradient(ellipse, #ffddad, #ffb145);
+      color: #ffffff;
+      transition: background .3s; }
+      .big-button .shadow button:hover {
+        background: radial-gradient(ellipse, #ffebcf, #ffb145); }
+        .big-button .shadow button:hover span {
+          text-shadow: 0 0 10px white; }
       .big-button .shadow button:focus {
         outline: none; }
       .big-button .shadow button span {
         font-family: gochi-hand, sans-serif;
         font-size: 72px;
-        text-shadow: 0 0 10px white; }
+        text-shadow: 0 0 2px white;
+        transition: text-shadow .2s; }
 
 /*# sourceMappingURL=main.css.map */
