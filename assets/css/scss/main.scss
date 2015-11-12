@@ -273,17 +273,6 @@ h4 {
       top: -100px;
     }
 
-    &:hover {
-      background: radial-gradient(ellipse, #ffebcf, #ffb145);
-      span {
-        text-shadow: 0 0 10px rgba(255, 255, 255, 1);
-      }
-    }
-
-    &:focus{
-      outline: none;
-    }
-
     button {
       outline: none;
       width: 300px;
@@ -296,6 +285,17 @@ h4 {
       color: #ffffff;
 
       transition: background .3s;
+
+      &:focus{
+        outline: none;
+      }
+
+      &:hover {
+        background: radial-gradient(ellipse, #ffebcf, #ffb145);
+        span {
+          text-shadow: 0 0 10px rgba(255, 255, 255, 1);
+        }
+      }
 
       span {
         font-family: gochi-hand, sans-serif;

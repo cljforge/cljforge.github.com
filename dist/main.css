@@ -198,12 +198,6 @@ h4 {
     .big-button .shadow:active {
       height: 100px;
       top: -100px; }
-    .big-button .shadow:hover {
-      background: radial-gradient(ellipse, #ffebcf, #ffb145); }
-      .big-button .shadow:hover span {
-        text-shadow: 0 0 10px white; }
-    .big-button .shadow:focus {
-      outline: none; }
     .big-button .shadow button {
       outline: none;
       width: 300px;
@@ -214,6 +208,12 @@ h4 {
       background: radial-gradient(ellipse, #ffddad, #ffb145);
       color: #ffffff;
       transition: background .3s; }
+      .big-button .shadow button:focus {
+        outline: none; }
+      .big-button .shadow button:hover {
+        background: radial-gradient(ellipse, #ffebcf, #ffb145); }
+        .big-button .shadow button:hover span {
+          text-shadow: 0 0 10px white; }
       .big-button .shadow button span {
         font-family: gochi-hand, sans-serif;
         font-size: 72px;
