@@ -6,29 +6,6 @@ $op : 0.9;
 $opbg : rgba(0,0,0,0.8);
 
 
-@font-face {
-  font-family: hanken;
-  src: url('../assets/fonts/Hanken-Book.ttf');
-}
-
-body {
-  background-color: $background;
-  font-family: hanken, serif;
-  font-size: 12pt;
-}
-
-@media (min-width: 768px) {
-  .block{
-    height: 220px;
-  }
-}
-
-@media (max-width: 768px) {
-  .block{
-    height: auto;
-  }
-}
-
 @mixin bg-size ($size) {
   -moz-background-size: $size; /* Firefox 3.6+ */
   -webkit-background-size: $size; /* Safari 3.1+ и Chrome 4.0+ */
@@ -37,13 +14,9 @@ body {
 }
 
 @mixin shadow (){
+  -webkit-box-shadow: 0 10px 5px $shadow;
+  -moz-box-shadow: 0 10px 5px $shadow;
   box-shadow: 0 10px 5px $shadow;
-}
-
-.btn-default {
-  background-color: $background;
-  color: $color;
-  border: $border;
 }
 
 @mixin transition($value) {
@@ -59,54 +32,31 @@ body {
   border-radius: $radius;
 }
 
+@media (min-width: 768px) {
+  .block{
+    height: 220px;
+  }
+}
+
+@media (max-width: 768px) {
+  .block{
+    height: auto;
+  }
+}
+
+@font-face {
+  font-family: hanken;
+  src: url('../assets/fonts/Hanken-Book.ttf');
+}
+
+body {
+  background-color: $background;
+  font-family: hanken, serif;
+  font-size: 12pt;
+}
+
 section {
   margin: 5px;
-}
-
-.header {
-  margin-left: -15px;
-}
-
-.footer{
-  margin-right: -15px;
-  position: fixed;
-  bottom: 0;
-}
-
-.btn.round {
-  border-radius: 50%;
-  height: 50px;
-  width: 50px;
-}
-
-.bg {
-  position: absolute;
-  background: url('../assets/img/clj.png') no-repeat;
-  @include bg-size(cover);
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-#content-view {
-  margin-top: 100px;
-}
-
-.no-margin {
-  margin: 0;
-}
-
-.no-padding {
-  padding: 0;
-}
-
-.panel {
-  background: $opbg;
-  border-radius: 0;
-  color: $color;
-  padding: 10px;
-  @include shadow();
 }
 
 h4 {
@@ -124,7 +74,56 @@ h4 {
   }
 }
 
-div.round-sidebar {
+.no-margin {margin: 0;}
+.no-padding {padding: 0;}
+
+.header {
+  margin-left: -15px;
+}
+
+.footer{
+  margin-right: -15px;
+  position: fixed;
+  bottom: 0;
+}
+
+.btn {
+  .btn-default {
+    background-color: $background;
+    color: $color;
+    border: $border;
+  }
+
+  &.round {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+  }
+}
+
+.bg {
+  position: absolute;
+  background: url('../assets/img/clj.png') no-repeat;
+  @include bg-size(cover);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#content-view {
+  margin-top: 100px;
+}
+
+.panel {
+  background: $opbg;
+  border-radius: 0;
+  color: $color;
+  padding: 10px;
+  @include shadow();
+}
+
+.round-sidebar {
   position: fixed;
   top: 50%;
   right: -75px;
@@ -151,54 +150,43 @@ div.round-sidebar {
     left: 50%;
     @include transition(all .5s);
   }
+
+  &.active {
+    width: 300px;
+    margin-top: -150px;
+    right: -150px;
+    height: 300px;
+
+    .btn {
+      margin-left: -25px;
+    }
+
+    #nav {
+      margin-left: -55px;
+    }
+    #nav51 {
+      top: 19%;
+      left: 37%;
+    }
+    #nav52 {
+      left: 22%;
+      top: 32%
+    }
+    #nav53 {
+      left: 16%;
+      top: 50%
+    }
+    #nav54 {
+      left: 22%;
+      top: 68%
+    }
+
+    #nav55 {
+      top: 81%;
+      left: 37%;
+    }
+  }
 }
-
-div.round-sidebar.active {
-  width: 300px;
-  margin-top: -150px;
-  right: -150px;
-  height: 300px;
-
-  .btn {
-    margin-left: -25px;
-  }
-
-  #nav {
-    margin-left: -55px;
-  }
-  #nav51 {
-    top: 19%;
-    left: 37%;
-  }
-  #nav52 {
-    left: 22%;
-    top: 32%
-  }
-  #nav53 {
-    left: 16%;
-    top: 50%
-  }
-  #nav54 {
-    left: 22%;
-    top: 68%
-  }
-
-  #nav55 {
-    top: 81%;
-    left: 37%;
-  }
-}
-
-.layout-wrapper.faded {
-  display: block;
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  opacity: $op;
-  background-color: black;
-  @include transition(all .5s);
-}
-
 
 .blocks {
   background: $opbg;
@@ -236,10 +224,6 @@ div.round-sidebar.active {
           right: 100%;
         }
       }
-    }
-
-    .content {
-      transition: display .2s;
     }
   }
 
@@ -289,6 +273,17 @@ div.round-sidebar.active {
       top: -100px;
     }
 
+    &:hover {
+      background: radial-gradient(ellipse, #ffebcf, #ffb145);
+      span {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 1);
+      }
+    }
+
+    &:focus{
+      outline: none;
+    }
+
     button {
       outline: none;
       width: 300px;
@@ -301,18 +296,6 @@ div.round-sidebar.active {
       color: #ffffff;
 
       transition: background .3s;
-
-      &:hover {
-        background: radial-gradient(ellipse, #ffebcf, #ffb145);
-        span {
-          text-shadow: 0 0 10px rgba(255, 255, 255, 1);
-        }
-
-      }
-
-      &:focus{
-        outline: none;
-      }
 
       span {
         font-family: gochi-hand, sans-serif;
