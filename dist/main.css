@@ -42,7 +42,7 @@ h4 {
   position: fixed;
   bottom: 0; }
 
-.btn .btn-default {
+.btn.btn-default {
   background-color: black;
   color: #ebebe4;
   border: black; }

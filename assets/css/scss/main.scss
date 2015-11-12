@@ -88,7 +88,7 @@ h4 {
 }
 
 .btn {
-  .btn-default {
+  &.btn-default {
     background-color: $background;
     color: $color;
     border: $border;
